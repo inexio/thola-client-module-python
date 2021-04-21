@@ -53,10 +53,7 @@ import thola_client
 from thola_client.rest import ApiException
 from pprint import pprint
 
-# Configure HTTP basic authorization: basicAuth
 configuration = thola_client.Configuration()
-configuration.username = 'YOUR_USERNAME'
-configuration.password = 'YOUR_PASSWORD'
 
 # create an instance of the API class
 api_instance = thola_client.CheckApi(thola_client.ApiClient(configuration))
@@ -175,17 +172,6 @@ Class | Method | HTTP request | Description
  - [Thresholds](docs/Thresholds.md)
  - [UPSComponent](docs/UPSComponent.md)
  - [Value](docs/Value.md)
-
-
-## Documentation For Authorization
-
-
-## basicAuth
-
-- **Type**: HTTP basic authentication
-
-
-## Author
 
 
 
