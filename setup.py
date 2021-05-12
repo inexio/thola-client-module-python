@@ -36,11 +36,11 @@ setup(
     description="Thola",
     author_email="",
     url="",
-    keywords=["Swagger", "Thola"],
+    keywords=["Thola", "Client"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    REST API for Thola.  For more information look at our Github : https://github.com/inexio/thola  # noqa: E501
+    REST API client module for Thola.  For more information look at our Github : https://github.com/inexio/thola
     """
 )
