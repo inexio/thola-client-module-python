@@ -38,6 +38,7 @@ class SNMPConnectionData(object):
         'discover_retries': 'int',
         'discover_timeout': 'int',
         'ports': 'list[int]',
+        'v3_data': 'SNMPv3ConnectionData',
         'versions': 'list[str]'
     }
 
@@ -47,10 +48,11 @@ class SNMPConnectionData(object):
         'discover_retries': 'discoverRetries',
         'discover_timeout': 'discoverTimeout',
         'ports': 'ports',
+        'v3_data': 'v3_data',
         'versions': 'versions'
     }
 
-    def __init__(self, communities=None, discover_parallel_requests=None, discover_retries=None, discover_timeout=None, ports=None, versions=None, _configuration=None):  # noqa: E501
+    def __init__(self, communities=None, discover_parallel_requests=None, discover_retries=None, discover_timeout=None, ports=None, v3_data=None, versions=None, _configuration=None):  # noqa: E501
         """SNMPConnectionData - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -61,6 +63,7 @@ class SNMPConnectionData(object):
         self._discover_retries = None
         self._discover_timeout = None
         self._ports = None
+        self._v3_data = None
         self._versions = None
         self.discriminator = None
 
@@ -74,6 +77,8 @@ class SNMPConnectionData(object):
             self.discover_timeout = discover_timeout
         if ports is not None:
             self.ports = ports
+        if v3_data is not None:
+            self.v3_data = v3_data
         if versions is not None:
             self.versions = versions
 
@@ -191,6 +196,27 @@ class SNMPConnectionData(object):
         """
 
         self._ports = ports
+
+    @property
+    def v3_data(self):
+        """Gets the v3_data of this SNMPConnectionData.  # noqa: E501
+
+
+        :return: The v3_data of this SNMPConnectionData.  # noqa: E501
+        :rtype: SNMPv3ConnectionData
+        """
+        return self._v3_data
+
+    @v3_data.setter
+    def v3_data(self, v3_data):
+        """Sets the v3_data of this SNMPConnectionData.
+
+
+        :param v3_data: The v3_data of this SNMPConnectionData.  # noqa: E501
+        :type: SNMPv3ConnectionData
+        """
+
+        self._v3_data = v3_data
 
     @property
     def versions(self):

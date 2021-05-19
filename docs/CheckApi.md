@@ -1,4 +1,4 @@
-# swagger_client.CheckApi
+# thola_client.CheckApi
 
 All URIs are relative to *http://localhost:8237*
 

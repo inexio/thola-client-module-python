@@ -75,7 +75,8 @@ class Interface(object):
         'optical_amplifier': 'OpticalAmplifierInterface',
         'optical_opm': 'OpticalOPMInterface',
         'optical_transponder': 'OpticalTransponderInterface',
-        'radio': 'RadioInterface'
+        'radio': 'RadioInterface',
+        'sap': 'SAPInterface'
     }
 
     attribute_map = {
@@ -121,10 +122,11 @@ class Interface(object):
         'optical_amplifier': 'optical_amplifier',
         'optical_opm': 'optical_opm',
         'optical_transponder': 'optical_transponder',
-        'radio': 'radio'
+        'radio': 'radio',
+        'sap': 'sap'
     }
 
-    def __init__(self, dwdm=None, ethernet_like=None, if_admin_status=None, if_alias=None, if_descr=None, if_hc_in_broadcast_pkts=None, if_hc_in_multicast_pkts=None, if_hc_in_octets=None, if_hc_in_ucast_pkts=None, if_hc_out_broadcast_pkts=None, if_hc_out_multicast_pkts=None, if_hc_out_octets=None, if_hc_out_ucast_pkts=None, if_high_speed=None, if_in_broadcast_pkts=None, if_in_discards=None, if_in_errors=None, if_in_multicast_pkts=None, if_in_n_ucast_pkts=None, if_in_octets=None, if_in_ucast_pkts=None, if_in_unknown_protos=None, if_index=None, if_last_change=None, if_mtu=None, if_name=None, if_oper_status=None, if_out_broadcast_pkts=None, if_out_discards=None, if_out_errors=None, if_out_multicast_pkts=None, if_out_n_ucast_pkts=None, if_out_octets=None, if_out_q_len=None, if_out_ucast_pkts=None, if_phys_address=None, if_specific=None, if_speed=None, if_type=None, optical_amplifier=None, optical_opm=None, optical_transponder=None, radio=None, _configuration=None):  # noqa: E501
+    def __init__(self, dwdm=None, ethernet_like=None, if_admin_status=None, if_alias=None, if_descr=None, if_hc_in_broadcast_pkts=None, if_hc_in_multicast_pkts=None, if_hc_in_octets=None, if_hc_in_ucast_pkts=None, if_hc_out_broadcast_pkts=None, if_hc_out_multicast_pkts=None, if_hc_out_octets=None, if_hc_out_ucast_pkts=None, if_high_speed=None, if_in_broadcast_pkts=None, if_in_discards=None, if_in_errors=None, if_in_multicast_pkts=None, if_in_n_ucast_pkts=None, if_in_octets=None, if_in_ucast_pkts=None, if_in_unknown_protos=None, if_index=None, if_last_change=None, if_mtu=None, if_name=None, if_oper_status=None, if_out_broadcast_pkts=None, if_out_discards=None, if_out_errors=None, if_out_multicast_pkts=None, if_out_n_ucast_pkts=None, if_out_octets=None, if_out_q_len=None, if_out_ucast_pkts=None, if_phys_address=None, if_specific=None, if_speed=None, if_type=None, optical_amplifier=None, optical_opm=None, optical_transponder=None, radio=None, sap=None, _configuration=None):  # noqa: E501
         """Interface - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
@@ -173,6 +175,7 @@ class Interface(object):
         self._optical_opm = None
         self._optical_transponder = None
         self._radio = None
+        self._sap = None
         self.discriminator = None
 
         if dwdm is not None:
@@ -261,6 +264,8 @@ class Interface(object):
             self.optical_transponder = optical_transponder
         if radio is not None:
             self.radio = radio
+        if sap is not None:
+            self.sap = sap
 
     @property
     def dwdm(self):
@@ -1164,6 +1169,27 @@ class Interface(object):
         """
 
         self._radio = radio
+
+    @property
+    def sap(self):
+        """Gets the sap of this Interface.  # noqa: E501
+
+
+        :return: The sap of this Interface.  # noqa: E501
+        :rtype: SAPInterface
+        """
+        return self._sap
+
+    @sap.setter
+    def sap(self, sap):
+        """Sets the sap of this Interface.
+
+
+        :param sap: The sap of this Interface.  # noqa: E501
+        :type: SAPInterface
+        """
+
+        self._sap = sap
 
     def to_dict(self):
         """Returns the model properties as a dict"""

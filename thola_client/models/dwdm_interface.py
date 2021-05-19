@@ -34,58 +34,43 @@ class DWDMInterface(object):
     """
     swagger_types = {
         'channels': 'list[OpticalChannel]',
-        'channels_100_g': 'list[OpticalChannel]',
-        'corrected_bit_error_rate': 'int',
+        'corrected_fec': 'list[Rate]',
         'rx_power': 'float',
-        'rx_power_100_g': 'float',
         'tx_power': 'float',
-        'tx_power_100_g': 'float',
-        'uncorrected_bit_error_rate': 'int'
+        'uncorrected_fec': 'list[Rate]'
     }
 
     attribute_map = {
         'channels': 'channels',
-        'channels_100_g': 'channels_100_g',
-        'corrected_bit_error_rate': 'corrected_bit_error_rate',
+        'corrected_fec': 'corrected_fec',
         'rx_power': 'rx_power',
-        'rx_power_100_g': 'rx_power_100_g',
         'tx_power': 'tx_power',
-        'tx_power_100_g': 'tx_power_100_g',
-        'uncorrected_bit_error_rate': 'uncorrected_bit_error_rate'
+        'uncorrected_fec': 'uncorrected_fec'
     }
 
-    def __init__(self, channels=None, channels_100_g=None, corrected_bit_error_rate=None, rx_power=None, rx_power_100_g=None, tx_power=None, tx_power_100_g=None, uncorrected_bit_error_rate=None, _configuration=None):  # noqa: E501
+    def __init__(self, channels=None, corrected_fec=None, rx_power=None, tx_power=None, uncorrected_fec=None, _configuration=None):  # noqa: E501
         """DWDMInterface - a model defined in Swagger"""  # noqa: E501
         if _configuration is None:
             _configuration = Configuration()
         self._configuration = _configuration
 
         self._channels = None
-        self._channels_100_g = None
-        self._corrected_bit_error_rate = None
+        self._corrected_fec = None
         self._rx_power = None
-        self._rx_power_100_g = None
         self._tx_power = None
-        self._tx_power_100_g = None
-        self._uncorrected_bit_error_rate = None
+        self._uncorrected_fec = None
         self.discriminator = None
 
         if channels is not None:
             self.channels = channels
-        if channels_100_g is not None:
-            self.channels_100_g = channels_100_g
-        if corrected_bit_error_rate is not None:
-            self.corrected_bit_error_rate = corrected_bit_error_rate
+        if corrected_fec is not None:
+            self.corrected_fec = corrected_fec
         if rx_power is not None:
             self.rx_power = rx_power
-        if rx_power_100_g is not None:
-            self.rx_power_100_g = rx_power_100_g
         if tx_power is not None:
             self.tx_power = tx_power
-        if tx_power_100_g is not None:
-            self.tx_power_100_g = tx_power_100_g
-        if uncorrected_bit_error_rate is not None:
-            self.uncorrected_bit_error_rate = uncorrected_bit_error_rate
+        if uncorrected_fec is not None:
+            self.uncorrected_fec = uncorrected_fec
 
     @property
     def channels(self):
@@ -109,46 +94,25 @@ class DWDMInterface(object):
         self._channels = channels
 
     @property
-    def channels_100_g(self):
-        """Gets the channels_100_g of this DWDMInterface.  # noqa: E501
+    def corrected_fec(self):
+        """Gets the corrected_fec of this DWDMInterface.  # noqa: E501
 
 
-        :return: The channels_100_g of this DWDMInterface.  # noqa: E501
-        :rtype: list[OpticalChannel]
+        :return: The corrected_fec of this DWDMInterface.  # noqa: E501
+        :rtype: list[Rate]
         """
-        return self._channels_100_g
+        return self._corrected_fec
 
-    @channels_100_g.setter
-    def channels_100_g(self, channels_100_g):
-        """Sets the channels_100_g of this DWDMInterface.
-
-
-        :param channels_100_g: The channels_100_g of this DWDMInterface.  # noqa: E501
-        :type: list[OpticalChannel]
-        """
-
-        self._channels_100_g = channels_100_g
-
-    @property
-    def corrected_bit_error_rate(self):
-        """Gets the corrected_bit_error_rate of this DWDMInterface.  # noqa: E501
+    @corrected_fec.setter
+    def corrected_fec(self, corrected_fec):
+        """Sets the corrected_fec of this DWDMInterface.
 
 
-        :return: The corrected_bit_error_rate of this DWDMInterface.  # noqa: E501
-        :rtype: int
-        """
-        return self._corrected_bit_error_rate
-
-    @corrected_bit_error_rate.setter
-    def corrected_bit_error_rate(self, corrected_bit_error_rate):
-        """Sets the corrected_bit_error_rate of this DWDMInterface.
-
-
-        :param corrected_bit_error_rate: The corrected_bit_error_rate of this DWDMInterface.  # noqa: E501
-        :type: int
+        :param corrected_fec: The corrected_fec of this DWDMInterface.  # noqa: E501
+        :type: list[Rate]
         """
 
-        self._corrected_bit_error_rate = corrected_bit_error_rate
+        self._corrected_fec = corrected_fec
 
     @property
     def rx_power(self):
@@ -172,27 +136,6 @@ class DWDMInterface(object):
         self._rx_power = rx_power
 
     @property
-    def rx_power_100_g(self):
-        """Gets the rx_power_100_g of this DWDMInterface.  # noqa: E501
-
-
-        :return: The rx_power_100_g of this DWDMInterface.  # noqa: E501
-        :rtype: float
-        """
-        return self._rx_power_100_g
-
-    @rx_power_100_g.setter
-    def rx_power_100_g(self, rx_power_100_g):
-        """Sets the rx_power_100_g of this DWDMInterface.
-
-
-        :param rx_power_100_g: The rx_power_100_g of this DWDMInterface.  # noqa: E501
-        :type: float
-        """
-
-        self._rx_power_100_g = rx_power_100_g
-
-    @property
     def tx_power(self):
         """Gets the tx_power of this DWDMInterface.  # noqa: E501
 
@@ -214,46 +157,25 @@ class DWDMInterface(object):
         self._tx_power = tx_power
 
     @property
-    def tx_power_100_g(self):
-        """Gets the tx_power_100_g of this DWDMInterface.  # noqa: E501
+    def uncorrected_fec(self):
+        """Gets the uncorrected_fec of this DWDMInterface.  # noqa: E501
 
 
-        :return: The tx_power_100_g of this DWDMInterface.  # noqa: E501
-        :rtype: float
+        :return: The uncorrected_fec of this DWDMInterface.  # noqa: E501
+        :rtype: list[Rate]
         """
-        return self._tx_power_100_g
+        return self._uncorrected_fec
 
-    @tx_power_100_g.setter
-    def tx_power_100_g(self, tx_power_100_g):
-        """Sets the tx_power_100_g of this DWDMInterface.
-
-
-        :param tx_power_100_g: The tx_power_100_g of this DWDMInterface.  # noqa: E501
-        :type: float
-        """
-
-        self._tx_power_100_g = tx_power_100_g
-
-    @property
-    def uncorrected_bit_error_rate(self):
-        """Gets the uncorrected_bit_error_rate of this DWDMInterface.  # noqa: E501
+    @uncorrected_fec.setter
+    def uncorrected_fec(self, uncorrected_fec):
+        """Sets the uncorrected_fec of this DWDMInterface.
 
 
-        :return: The uncorrected_bit_error_rate of this DWDMInterface.  # noqa: E501
-        :rtype: int
-        """
-        return self._uncorrected_bit_error_rate
-
-    @uncorrected_bit_error_rate.setter
-    def uncorrected_bit_error_rate(self, uncorrected_bit_error_rate):
-        """Sets the uncorrected_bit_error_rate of this DWDMInterface.
-
-
-        :param uncorrected_bit_error_rate: The uncorrected_bit_error_rate of this DWDMInterface.  # noqa: E501
-        :type: int
+        :param uncorrected_fec: The uncorrected_fec of this DWDMInterface.  # noqa: E501
+        :type: list[Rate]
         """
 
-        self._uncorrected_bit_error_rate = uncorrected_bit_error_rate
+        self._uncorrected_fec = uncorrected_fec
 
     def to_dict(self):
         """Returns the model properties as a dict"""
